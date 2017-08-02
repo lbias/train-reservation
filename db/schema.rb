@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170802020459) do
+ActiveRecord::Schema.define(version: 20170802042041) do
 
   create_table "reservations", force: :cascade do |t|
     t.string "booking_code"
@@ -32,6 +32,15 @@ ActiveRecord::Schema.define(version: 20170802020459) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["number"], name: "index_trains_on_number"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "auth_token"
+    t.string "email"
+    t.string "password"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "avatar"
   end
 
 end
