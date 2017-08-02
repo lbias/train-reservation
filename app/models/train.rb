@@ -3,6 +3,8 @@ class Train < ApplicationRecord
 
   has_many :reservations
 
+  mount_uploader :train_logo, TrainLogoUploader
+
   SEATS = begin
     (1..6).to_a.map do |series|
       ["A", "B", "C"].map do |letter|
